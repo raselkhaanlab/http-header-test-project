@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello from xyz server</h1>
+    <iframe src="https://server2.local.com?type=frame"></iframe>
+    <script>
+        fetch("https://server2.local.com/?fetch-xyz", {
+            // credentials: "include"
+        })
+    </script>
+    <!-- <a href="https://server2.local.com?type=link">server2</a>
+    <script>
+        fetch("https://server2.local.com?type=fetch", {
+            credentials: "include"
+        });
+    </script> -->
+</body>
+
+</html>

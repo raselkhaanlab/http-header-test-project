@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  server1:
+    build:
+      context: .
+      dockerfile: server1/Dockerfile
+    volumes:
+      - ./server1/:/opt/app
+  server2:
+    build:
+      context: .
+      dockerfile: ./server2/Dockerfile
+    volumes:
+      - ./server2/:/opt/app
+  server3:
+    build:
+      context: .
+      dockerfile: ./server3/Dockerfile
+    volumes:
+      - ./server3/:/opt/app
+  xyz-server:
+    build:
+      context: .
+      dockerfile: ./xyz-server/Dockerfile
+    volumes:
+      - ./xyz-server/:/opt/app
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - server1
+      - server2
+      - server3
+      - xyz-server

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>server2</title>
+</head>
+
+<body>
+    <h2>Hello from server 2</h2>
+    <script src="server2.client.js"></script>
+    <script>
+        console.log("2: ", localStorage.getItem("test"))
+        fetch("https://server2.local.com/?fetch-server-2")
+    </script>
+</body>
+
+</html>
